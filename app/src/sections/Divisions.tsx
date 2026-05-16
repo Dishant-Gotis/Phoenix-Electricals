@@ -12,8 +12,8 @@ const divisions = [
     color: 'earth-blue',
     glow: 'shadow-glow-blue',
     features: ['AIS & GIS Substations', 'Transmission Line Erection', 'Stringing & Commissioning', 'Grid Modernization'],
-    cta: 'View Technical Portfolio',
-    subdomain: 'transmission.phoenixelectricals.com',
+    cta: 'Visit Transmission Website',
+    url: 'https://transmission.phoenixelectricals.com',
   },
   {
     name: 'Phoenix Workforce Innovations Pvt. Ltd.',
@@ -25,8 +25,8 @@ const divisions = [
     color: 'energy-green',
     glow: 'shadow-glow-green',
     features: ['Mass Mobilization', 'Digital Payroll Systems', 'Strict Compliance', 'End-to-End Management'],
-    cta: 'Request Manpower Quote',
-    subdomain: 'workforce.phoenixelectricals.com',
+    cta: 'Request Workforce Quote',
+    url: 'https://workforce.phoenixelectricals.com',
   },
   {
     name: 'Phoenix Power Solutions Pvt. Ltd.',
@@ -39,7 +39,7 @@ const divisions = [
     glow: 'shadow-glow-orange',
     features: ['Solar PV Installation', 'Power Consultancy', 'Energy Audits', 'Green Building Solutions'],
     cta: 'Explore Solar Solutions',
-    subdomain: 'power.phoenixelectricals.com',
+    url: 'https://power.phoenixelectricals.com',
   },
 ];
 
@@ -53,7 +53,7 @@ export function Divisions() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={sectionRef}>
         {/* Section Header */}
-        <div className={`reveal-luxe max-w-4xl mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`reveal-luxe max-w-4xl mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="section-kicker text-energy-green">
             Our Divisions
           </span>
@@ -62,8 +62,7 @@ export function Divisions() {
             <span className="text-gradient">Phoenix Group</span>
           </h2>
           <p className="max-w-3xl text-lg text-electric-black/62 leading-relaxed">
-            Three specialized companies, one unified mission: to power progress across every 
-            dimension of India's electrical infrastructure landscape.
+            The Phoenix Group connects specialized engineering, workforce delivery, and sustainable power services. Open any sister site in a new tab for dedicated team capabilities.
           </p>
         </div>
 
@@ -81,7 +80,7 @@ export function Divisions() {
                 }`}
                 style={{ transitionDelay: `${index * 150 + 200}ms` }}
               >
-                <div className={`overflow-hidden rounded-[1.55rem] bg-white flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                <div className={`overflow-hidden rounded-[1.55rem] border border-earth-blue/10 bg-white flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
                   {/* Image */}
                   <div className="lg:w-5/12 relative min-h-72 lg:h-auto overflow-hidden">
                     <img
@@ -142,19 +141,27 @@ export function Divisions() {
                     </div>
 
                     {/* CTA */}
-                    <div className="flex items-center gap-4">
-                      <button 
-                        className="group/btn flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-white transition-all duration-700 motion-ease hover:-translate-y-0.5 hover:gap-3 active:scale-[0.98]"
+                    <div className="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-4">
+                      <a
+                        href={div.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group/btn flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-white transition-all duration-700 motion-ease hover:-translate-y-0.5 hover:gap-3 active:scale-[0.98] shadow-[0_16px_30px_rgba(79,155,198,0.18)]"
                         style={{ 
                           backgroundColor: div.color === 'earth-blue' ? '#4f9bc6' : div.color === 'energy-green' ? '#6fbf8f' : '#d99543',
                         }}
                       >
                         {div.cta}
                         <ArrowUpRight className="w-4 h-4" weight="bold" />
-                      </button>
-                      <span className="text-xs text-electric-black/42 font-mono">
-                        {div.subdomain}
-                      </span>
+                      </a>
+                      <div>
+                        <span className="text-xs text-electric-black/42 font-mono block">
+                          {div.url.replace('https://', '')}
+                        </span>
+                        <span className="text-[11px] uppercase tracking-[0.2em] text-electric-black/40">
+                          Opens in a new tab
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -164,8 +171,8 @@ export function Divisions() {
         </div>
 
         {/* Coming Soon Banner */}
-        <div className={`mt-12 text-center transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-3 rounded-full border border-earth-blue/15 bg-white px-6 py-3 shadow-[0_16px_50px_rgba(47,113,151,0.08)]">
+        <div className={`mt-10 text-center transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center gap-3 rounded-full border border-earth-blue/15 bg-white/95 px-6 py-3 shadow-[0_16px_50px_rgba(47,113,151,0.08)]">
             <span className="w-2 h-2 rounded-full bg-golden-yellow animate-pulse" />
             <span className="text-sm text-earth-blue font-medium">
               Individual division websites launching Q3 2026

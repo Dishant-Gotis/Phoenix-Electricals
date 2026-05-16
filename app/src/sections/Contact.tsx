@@ -42,7 +42,7 @@ export function Contact() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-earth-blue/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={sectionRef}>
-        <div className={`reveal-luxe max-w-4xl mx-auto text-center mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`reveal-luxe max-w-4xl mx-auto text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="section-kicker text-energy-green">
             Get in Touch
           </span>
@@ -62,7 +62,7 @@ export function Contact() {
             <div className={`space-y-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
               {offices.map((office) => (
                 <div key={office.city} className="premium-card reveal-luxe">
-                  <div className="rounded-[1.55rem] bg-white p-6">
+                  <div className="rounded-[1.55rem] bg-gradient-to-br from-white via-white to-sky-50 p-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-full bg-earth-blue/10 flex items-center justify-center">
                       <MapPin className="w-5 h-5 text-earth-blue" weight="light" />
@@ -87,7 +87,7 @@ export function Contact() {
 
             {/* Representatives */}
             <div className={`premium-card reveal-luxe transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '300ms' }}>
-              <div className="rounded-[1.55rem] bg-white p-6">
+              <div className="rounded-[1.55rem] bg-gradient-to-br from-white via-white to-sky-50 p-6">
               <h3 className="font-display text-lg font-bold text-electric-black mb-4">Our Representatives</h3>
               <div className="space-y-3">
                 {representatives.map((rep) => (
@@ -110,7 +110,7 @@ export function Contact() {
 
             {/* Working Hours */}
             <div className={`premium-card reveal-luxe transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
-              <div className="rounded-[1.55rem] bg-white p-6">
+              <div className="rounded-[1.55rem] bg-gradient-to-br from-white via-white to-amber-50 p-6">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-full bg-earth-blue/10 flex items-center justify-center">
                   <Clock className="w-5 h-5 text-earth-blue" weight="light" />
@@ -134,7 +134,7 @@ export function Contact() {
           {/* Contact Form */}
           <div className={`lg:col-span-3 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '300ms' }}>
             <div className="premium-card reveal-luxe">
-              <div className="rounded-[1.55rem] bg-white p-6 md:p-8">
+              <div className="rounded-[1.55rem] bg-gradient-to-br from-white via-white to-sky-50 p-6 md:p-8">
               <h3 className="font-display text-2xl font-bold text-electric-black mb-2">Send us a Message</h3>
               <p className="text-electric-black/58 text-sm mb-6">Have a question or feedback? Fill out the form and we'll get back to you as soon as possible.</p>
 

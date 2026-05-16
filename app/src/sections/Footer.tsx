@@ -1,16 +1,18 @@
-import { ArrowUpRight, EnvelopeSimple, FacebookLogo, InstagramLogo, Lightning, LinkedinLogo, MapPin, Phone } from '@phosphor-icons/react';
+import { Link } from 'react-router';
+import { ArrowUpRight, FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
+import { Logo } from '../components/Logo';
 
 const footerLinks = {
   company: [
-    { label: 'About Us', href: '#about' },
-    { label: 'Our Divisions', href: '#divisions' },
-    { label: 'Services', href: '#services' },
-    { label: 'Impact', href: '#impact' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Contracts', href: '/contracts' },
+    { label: 'Clients', href: '/clients' },
+    { label: 'Contact Us', href: '/contact' },
   ],
   divisions: [
-    { label: 'Transmission Infrastructure', href: '#' },
-    { label: 'Workforce Innovations', href: '#' },
-    { label: 'Power Solutions', href: '#' },
+    { label: 'Transmission Infrastructure', href: 'https://transmission.phoenixelectricals.com' },
+    { label: 'Workforce Innovations', href: 'https://workforce.phoenixelectricals.com' },
+    { label: 'Power Solutions', href: 'https://power.phoenixelectricals.com' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '#' },
@@ -19,129 +21,85 @@ const footerLinks = {
   ],
 };
 
+
 export function Footer() {
-  const scrollTo = (href: string) => {
-    if (href.startsWith('#')) {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <footer className="relative bg-white border-t border-earth-blue/10">
-      {/* Top gradient accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-earth-blue/50 to-transparent" />
+    <footer className="relative bg-gradient-to-br from-[#0f2c3c] via-[#123548] to-[#1b4b65] text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+            {/* Brand */}
+            <div className="lg:col-span-2">
+              <Logo className="mb-6" />
+              <p className="text-sm text-white/72 leading-relaxed mb-6 max-w-sm">
+                Phoenix Electricals Transmission Infrastructure is the dedicated transmission and substation specialist in the Phoenix Group.
+              </p>
+              <div className="flex items-center gap-3">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white hover:bg-white/18 transition-all">
+                  <LinkedinLogo className="w-4 h-4" weight="light" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white hover:bg-white/18 transition-all">
+                  <InstagramLogo className="w-4 h-4" weight="light" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white hover:bg-white/18 transition-all">
+                  <FacebookLogo className="w-4 h-4" weight="light" />
+                </a>
+              </div>
+            </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <a href="#home" onClick={(e) => { e.preventDefault(); scrollTo('#home'); }} className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-full border border-earth-blue/15 bg-earth-blue/10 flex items-center justify-center">
-                <Lightning className="w-5 h-5 text-earth-blue" weight="light" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-lg text-electric-black leading-none tracking-tight">
-                  PHOENIX
-                </span>
-                <span className="text-[10px] text-earth-blue font-heading font-semibold tracking-[0.2em] uppercase leading-none">
-                  Electricals Group
-                </span>
-              </div>
-            </a>
-            <p className="text-sm text-electric-black/58 leading-relaxed mb-6 max-w-sm">
-              A leading electrical infrastructure group delivering turnkey solutions across 
-              substations, transmission lines, and renewable energy projects throughout India.
-            </p>
-            <div className="flex items-center gap-3">
-              <a href="#" className="w-10 h-10 rounded-full bg-bg-light border border-earth-blue/10 flex items-center justify-center text-earth-blue hover:text-electric-black hover:border-earth-blue/30 transition-all">
-                <LinkedinLogo className="w-4 h-4" weight="light" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-bg-light border border-earth-blue/10 flex items-center justify-center text-earth-blue hover:text-electric-black hover:border-earth-blue/30 transition-all">
-                <InstagramLogo className="w-4 h-4" weight="light" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-bg-light border border-earth-blue/10 flex items-center justify-center text-earth-blue hover:text-electric-black hover:border-earth-blue/30 transition-all">
-                <FacebookLogo className="w-4 h-4" weight="light" />
-              </a>
+            {/* Links */}
+            <div>
+              <h4 className="font-display font-semibold text-white mb-4">Company</h4>
+              <ul className="space-y-3">
+                {footerLinks.company.map((link) => (
+                  <li key={link.label}>
+                    <Link to={link.href} className="text-sm text-white/70 hover:text-amber-200 transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-display font-semibold text-white mb-4">Divisions</h4>
+              <ul className="space-y-3">
+                {footerLinks.divisions.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm text-white/70 hover:text-amber-200 transition-colors inline-flex items-center gap-1"
+                    >
+                      {link.label}
+                      <ArrowUpRight className="w-3 h-3" weight="bold" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-display font-semibold text-white mb-4">Quick Links</h4>
+              <ul className="space-y-3">
+                {footerLinks.legal.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="text-sm text-white/70 hover:text-amber-200 transition-colors">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          {/* Links */}
-          <div>
-            <h4 className="font-display font-semibold text-electric-black mb-4">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-                    className="text-sm text-electric-black/55 hover:text-earth-blue transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-display font-semibold text-electric-black mb-4">Divisions</h4>
-            <ul className="space-y-3">
-              {footerLinks.divisions.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-electric-black/55 hover:text-earth-blue transition-colors inline-flex items-center gap-1"
-                  >
-                    {link.label}
-                    <ArrowUpRight className="w-3 h-3" weight="bold" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-display font-semibold text-electric-black mb-4">Contact</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-sm text-electric-black/55">
-                <MapPin className="w-4 h-4 mt-0.5 text-earth-blue shrink-0" weight="light" />
-                <span>Om Sai Paradise, Bhiwandi, Thane - 421302</span>
-              </li>
-              <li>
-                <a href="tel:+919049744130" className="flex items-center gap-2 text-sm text-electric-black/55 hover:text-earth-blue transition-colors">
-                  <Phone className="w-4 h-4 text-earth-blue" weight="light" />
-                  +91 9049744130
-                </a>
-              </li>
-              <li>
-                <a href="mailto:hemantpatil4141@gmail.com" className="flex items-center gap-2 text-sm text-electric-black/55 hover:text-earth-blue transition-colors">
-                  <EnvelopeSimple className="w-4 h-4 text-earth-blue" weight="light" />
-                  hemantpatil4141@gmail.com
-                </a>
-              </li>
-            </ul>
+          {/* Bottom bar */}
+          <div className="pt-8 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-white/55">
+              &copy; {new Date().getFullYear()} Phoenix Electricals. All Rights Reserved.
+            </p>
           </div>
         </div>
-
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-earth-blue/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-electric-black/45">
-            &copy; {new Date().getFullYear()} Phoenix Electricals. All Rights Reserved.
-          </p>
-          <div className="flex items-center gap-6">
-            {footerLinks.legal.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-xs text-electric-black/45 hover:text-earth-blue transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
     </footer>
   );
 }

@@ -53,7 +53,9 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Geist', sans-serif;
-    background: #ffffff;
+    background:
+      radial-gradient(circle at top, rgba(47, 113, 151, 0.08), transparent 32%),
+      linear-gradient(180deg, #f7fbfd 0%, #ffffff 28%, #f5f8fb 100%);
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -111,17 +113,17 @@
   }
 
   .premium-section {
-    @apply relative overflow-hidden py-32 md:py-44;
-    background: linear-gradient(180deg, #ffffff, #fbfdfe);
+    @apply relative overflow-hidden py-20 md:py-28;
+    background: linear-gradient(180deg, #f8fcfe 0%, #ffffff 45%, #edf5f9 100%);
   }
 
   .premium-section-alt {
-    @apply relative overflow-hidden py-32 md:py-44;
-    background: linear-gradient(180deg, #f5f9fb, #ffffff);
+    @apply relative overflow-hidden py-20 md:py-28;
+    background: linear-gradient(180deg, #edf5f9 0%, #ffffff 48%, #f6fafc 100%);
   }
 
   .section-kicker {
-    @apply inline-flex items-center gap-2 rounded-full border border-earth-blue/15 bg-white/80 px-4 py-2 text-[10px] font-semibold text-earth-blue uppercase tracking-[0.24em] mb-6 shadow-[0_14px_40px_rgba(47,113,151,0.08)];
+    @apply inline-flex items-center gap-2 rounded-full border border-earth-blue/15 bg-white/90 px-4 py-2 text-[10px] font-semibold text-earth-blue uppercase tracking-[0.24em] mb-5 shadow-[0_14px_40px_rgba(47,113,151,0.08)];
   }
 
   .section-kicker::before {

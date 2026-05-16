@@ -18,11 +18,11 @@ export function Clients() {
   const { ref: sectionRef, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section className="premium-section">
+    <section className="premium-section noise-bg">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-energy-green/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={sectionRef}>
-        <div className={`reveal-luxe max-w-4xl mx-auto text-center mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`reveal-luxe max-w-4xl mx-auto text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="section-kicker text-violet-stroke">
             Trusted Partners
           </span>
@@ -35,15 +35,12 @@ export function Clients() {
           </p>
         </div>
 
-        <div className="reveal-luxe mb-10 overflow-hidden rounded-[2rem] border border-earth-blue/10 bg-white py-5 shadow-[0_24px_80px_rgba(47,113,151,0.1)]">
+        <div className="reveal-luxe mb-10 overflow-hidden rounded-[2rem] border border-earth-blue/10 bg-gradient-to-r from-white via-sky-50 to-white py-5 shadow-[0_24px_80px_rgba(47,113,151,0.1)]">
           <div className="client-marquee flex w-max items-center gap-4">
             {marqueeClients.map((client, index) => {
               const Icon = client.icon;
               return (
-                <div
-                  key={`${client.name}-${index}`}
-                  className="flex min-w-max items-center gap-3 rounded-full border border-earth-blue/10 bg-bg-light px-5 py-3"
-                >
+                <div key={`${client.name}-${index}`} className="flex min-w-max items-center gap-3 rounded-full border border-earth-blue/10 bg-white px-5 py-3 shadow-[0_12px_30px_rgba(47,113,151,0.06)]">
                   <Icon className="h-5 w-5 text-earth-blue" weight="light" />
                   <span className="text-sm font-semibold text-electric-black">{client.name}</span>
                   <span className="text-xs text-electric-black/42">{client.sector}</span>
@@ -59,7 +56,7 @@ export function Clients() {
             return (
               <div
                 key={client.name}
-                className={`group bg-white p-6 text-left transition-all duration-700 motion-ease hover:bg-bg-light ${
+                className={`group bg-white p-6 text-left transition-all duration-700 motion-ease hover:bg-sky-50 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${index * 50 + 200}ms` }}

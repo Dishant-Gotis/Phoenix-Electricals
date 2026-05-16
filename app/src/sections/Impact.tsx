@@ -47,7 +47,7 @@ export function Impact() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={sectionRef}>
         {/* Header */}
-        <div className={`reveal-luxe max-w-4xl mx-auto text-center mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`reveal-luxe max-w-4xl mx-auto text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="section-kicker">
             Our Impact
           </span>
@@ -72,7 +72,7 @@ export function Impact() {
                 }`}
                 style={{ transitionDelay: `${index * 100 + 200}ms` }}
               >
-                <div className="rounded-[1.55rem] bg-white p-6 md:p-8">
+                <div className="rounded-[1.55rem] border border-earth-blue/10 bg-gradient-to-br from-white via-white to-sky-50 p-6 md:p-8">
                   <div className={`w-12 h-12 rounded-full bg-earth-blue/10 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-700 motion-ease`}>
                     <Icon className={`w-7 h-7 ${stat.color}`} weight="light" />
                   </div>
@@ -84,7 +84,7 @@ export function Impact() {
 
                 {/* Decorative corner */}
                 <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden rounded-tr-2xl">
-                  <div className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-bl from-earth-blue/10 to-transparent rotate-45" />
+                  <div className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-bl from-amber-300/20 to-transparent rotate-45" />
                 </div>
               </div>
             );
